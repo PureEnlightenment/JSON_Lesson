@@ -1,4 +1,5 @@
 import json
+import requests
 
 
 def json_reader():
@@ -10,3 +11,13 @@ def json_reader():
 
 if __name__ == "__main__":
     json_reader()
+
+
+def get_and_read_json():
+    response = requests.get('https://reqres.in/api/unknown/2')
+    online_json = response.content.decode('utf-8')
+    print(online_json, {online_json})
+
+
+if __name__ == "__main__":
+    get_and_read_json()
