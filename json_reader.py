@@ -1,18 +1,12 @@
 import json
 
 
-def json_read():
-    users = {}
-    with open('src/users.json') as f:  # разобрать что за with и как работает open и что за as и f
-        users = json.load(f)
-    print("username: " + users['username'])
-    print("password: " + users['password'])
-
-    users['password'] = 'helloMoto'
-    with open('users.json', 'w') as f:
-        json.dump(users, f)  # что за json.dump
-    print("New password is: " + users['password'])
+def json_reader():
+    single_user_get = {}
+    with open('src/single_user_get.json') as read_file:
+        single_user_get = json.load(read_file)
+    print(single_user_get, 'data')  # чтение всего содержимого  вложенного json файла
 
 
-if __name__ == '__main__':
-    json_read()
+if __name__ == "__main__":
+    json_reader()
